@@ -29,7 +29,7 @@ A logic review is suggested.
 	}
 	stage('Quality check') {
 		withSonarQubeEnv('Sonar') {
-		bat "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jenkins-demo"
+		bat "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jenkins-demo-gb"
 }
 }
 }
