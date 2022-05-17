@@ -27,5 +27,10 @@ A logic review is suggested.
 		step([$class: 'Mailer', notifyEveryUnstableBuild: true, recipients: 'gwen.brms@hotmail.fr gwen.brms@gmail.com gwendhal.borremans@st.com', sendToIndividuals: false])
  
 	}
+	stage('Quality check') {
+		withSonarQubeEnv('Sonar') {
+		bat "mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=jenkins-demo"
+}
+}
 }
 }
